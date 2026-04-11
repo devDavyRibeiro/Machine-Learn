@@ -127,10 +127,6 @@ print(cm)
 import matplotlib.pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay
 
-disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-disp.plot()
-plt.show()
-
 #%% TESTE COM DIFERENTES ARQUITETURAS
 
 for camadas in [(10,), (20,), (50,), (100,), (200,), (10,10), (20,20), (50,50)]:
@@ -144,6 +140,10 @@ for camadas in [(10,), (20,), (50,), (100,), (200,), (10,10), (20,20), (50,50)]:
 
     acc = accuracy_score(y_test, y_pred)
     print("\nAcurácia com", camadas, ":", acc)
+
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+    disp.plot()
+    plt.show()
     
 
 #%% PARÂMETROS
